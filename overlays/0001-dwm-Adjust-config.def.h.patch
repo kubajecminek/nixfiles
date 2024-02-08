@@ -1,0 +1,78 @@
+From 9486b0f9827cf77e405ad4cf9183948ed5260c6d Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jakub=20Je=C4=8Dm=C3=ADnek?= <kuba@kubajecminek.cz>
+Date: Sat, 2 Mar 2024 19:58:57 +0100
+Subject: [PATCH] Adjust config
+
+---
+ config.def.h | 27 +++++++++++++++++----------
+ 1 file changed, 17 insertions(+), 10 deletions(-)
+
+diff --git a/config.def.h b/config.def.h
+index bba31ed..510e547 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,13 +5,13 @@ static const unsigned int borderpx  = 1;        /* border pixel of windows */
+ static const unsigned int snap      = 32;       /* snap pixel */
+ static const int showbar            = 1;        /* 0 means no bar */
+ static const int topbar             = 1;        /* 0 means bottom bar */
+-static const char *fonts[]          = { "monospace:size=10" };
+-static const char dmenufont[]       = "monospace:size=10";
+-static const char col_gray1[]       = "#222222";
+-static const char col_gray2[]       = "#444444";
+-static const char col_gray3[]       = "#bbbbbb";
+-static const char col_gray4[]       = "#eeeeee";
+-static const char col_cyan[]        = "#005577";
++static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=9" };
++static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=9";
++static const char col_gray1[]       = "#282828";
++static const char col_gray2[]       = "#928374";
++static const char col_gray3[]       = "#a89984";
++static const char col_gray4[]       = "#282828";
++static const char col_cyan[]        = "#a89984";
+ static const char *colors[][3]      = {
+ 	/*               fg         bg         border   */
+ 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
+@@ -19,7 +19,7 @@ static const char *colors[][3]      = {
+ };
+ 
+ /* tagging */
+-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
++static const char *tags[] = { "一", "二", "三", "四", "五", "六", "七", "八", "九" };
+ 
+ static const Rule rules[] = {
+ 	/* xprop(1):
+@@ -28,7 +28,8 @@ static const Rule rules[] = {
+ 	 */
+ 	/* class      instance    title       tags mask     isfloating   monitor */
+ 	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
+-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
++	{ "firefox",  NULL,       NULL,       1 << 7,       0,           -1 },
++	{ "Emacs",    NULL,       NULL,       1 << 8,       0,           -1 },
+ };
+ 
+ /* layout(s) */
+@@ -45,7 +46,7 @@ static const Layout layouts[] = {
+ };
+ 
+ /* key definitions */
+-#define MODKEY Mod1Mask
++#define MODKEY Mod4Mask
+ #define TAGKEYS(KEY,TAG) \
+ 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
+ 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
+@@ -84,6 +85,12 @@ static const Key keys[] = {
+ 	{ MODKEY,               60,     focusmon,       {.i = +1 } },   // period
+ 	{ MODKEY|ShiftMask,     59,     tagmon,         {.i = -1 } },   // comma
+ 	{ MODKEY|ShiftMask,     60,     tagmon,         {.i = +1 } },   // period
++	{ 0,                    67,     spawn,          SHCMD("pulsemixer --toggle-mute") },
++	{ 0,                    68,     spawn,          SHCMD("pulsemixer --change-volume -10") },
++	{ 0,                    69,     spawn,          SHCMD("pulsemixer --change-volume +10") },
++	{ 0,                    71,     spawn,          SHCMD("light -U 20") },
++	{ 0,                    72,     spawn,          SHCMD("light -A 20") },
++	{ 0,                    75,     spawn,          SHCMD("notmuch new") },
+ 	TAGKEYS(                10,                     0)              // 1
+ 	TAGKEYS(                11,                     1)              // 2
+ 	TAGKEYS(                12,                     2)              // 3
+-- 
+2.42.0
+
