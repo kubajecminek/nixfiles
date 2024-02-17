@@ -23,6 +23,17 @@
   :preface
   (setq user-emacs-directory "~/.emacs.d/"))
 
+(use-package pinentry
+  :config
+  (pinentry-start))
+
+(use-package epg-config
+  :custom
+  (epg-pinentry-mode 'loopback)
+
+  :preface
+  (setenv "GPG_AGENT_INFO" nil))
+
 (use-package gnus-start
   :custom
   (gnus-asynchronous t)
@@ -42,7 +53,7 @@
   (gnus-permanently-visible-groups "INBOX")
   (gnus-posting-styles '((".*"
                           (signature
-                           "Kuba Ječmínek\n<http://kubajecminek.cz>"))))
+                           "Kuba Ječmínek (http://kubajecminek.cz)"))))
 
   :preface
   (setq gnus-home-directory "~/Gnus/"
@@ -51,12 +62,12 @@
   :init
   (setq gnus-select-method '(nnnil ""))
   (setq gnus-secondary-select-methods '((nnimap "proton"
-                                              (nnimap-address "127.0.0.1")
-                                              (nnimap-user "kuba@kubajecminek.cz")
-                                              (nnimap-server-port 1143)
-                                              (nnimap-expunge never)
-                                              (nnimap-stream network)
-                                              (nnimap-record-commands t)))))
+                                                (nnimap-address "127.0.0.1")
+                                                (nnimap-user "kuba@kubajecminek.cz")
+                                                (nnimap-server-port 1143)
+                                                (nnimap-expunge never)
+                                                (nnimap-stream network)
+                                                (nnimap-record-commands t)))))
 
 (use-package message
   :bind ("C-x m" . compose-mail)

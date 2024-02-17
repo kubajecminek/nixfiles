@@ -1,7 +1,9 @@
 inputs: let
   inherit (inputs) nixpkgs-unstable;
 in
-  final: prev: {
+  final: prev: rec {
+    unstable = nixpkgs-unstable.legacyPackages.${prev.system};
+
     st = prev.st.overrideAttrs (old: {
       src = builtins.fetchTarball {
         url = "https://github.com/siduck/st/archive/master.tar.gz";
@@ -22,11 +24,13 @@ in
         ];
     });
 
-    protonmail-bridge = nixpkgs-unstable.legacyPackages.${prev.system}.protonmail-bridge.overrideAttrs (old: {
+    protonmail-bridge = unstable.protonmail-bridge.overrideAttrs (old: {
       patches =
         (old.patches or [])
         ++ [
           ./0001-Gnus-Fix-disable-parallelism.patch
         ];
     });
+
+    myUnstableGPG = unstable.gnupg;
   }

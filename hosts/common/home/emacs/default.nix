@@ -6,11 +6,13 @@
   programs.emacs = {
     enable = true;
     package = pkgs.emacs29-gtk3;
+
     extraPackages = epkgs:
       with epkgs;
         [
           magit
           evil
+          pinentry
         ]
         ++ [
           (callPackage ../../../../pkgs/klid {
