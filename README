@@ -1,7 +1,7 @@
 NixFiles
 ========
 
-This is my attempt to use declarative system management using Nix.
+This is my declarative system configuration.
 
 Machines
 --------

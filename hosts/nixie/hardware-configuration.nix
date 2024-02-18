@@ -16,35 +16,35 @@
   boot.extraModulePackages = [];
   boot.initrd.luks.devices."enc".device = "/dev/disk/by-uuid/5e8e5a14-3651-4da1-a2d9-f5d0f68e5438";
 
-  swapDevices = [{device = "/dev/disk/by-uuid/7aaf6484-ee35-435a-aa13-0b5e92f8294d";}];
+  swapDevices = [{device = "/dev/disk/by-label/swap";}];
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/8A4A-F279";
+    device = "/dev/disk/by-label/boot";
     fsType = "vfat";
   };
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/b7f94a49-6c05-4ad5-b432-70e9c6c3c53e";
+    device = "/dev/disk/by-label/btrfs";
     fsType = "btrfs";
-    options = ["subvol=root"];
+    options = ["subvol=root" "compress=zstd"];
   };
 
   fileSystems."/nix" = {
-    device = "/dev/disk/by-uuid/b7f94a49-6c05-4ad5-b432-70e9c6c3c53e";
+    device = "/dev/disk/by-label/btrfs";
     fsType = "btrfs";
-    options = ["subvol=nix"];
+    options = ["subvol=nix" "compress=zstd"];
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/b7f94a49-6c05-4ad5-b432-70e9c6c3c53e";
+    device = "/dev/disk/by-label/btrfs";
     fsType = "btrfs";
-    options = ["subvol=home"];
+    options = ["subvol=home" "compress=zstd"];
   };
 
   fileSystems."/data" = {
-    device = "/dev/disk/by-uuid/b7f94a49-6c05-4ad5-b432-70e9c6c3c53e";
+    device = "/dev/disk/by-label/btrfs";
     fsType = "btrfs";
-    options = ["subvol=data"];
+    options = ["subvol=data" "compress=zstd"];
   };
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
