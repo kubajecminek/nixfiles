@@ -8,6 +8,8 @@
   (scroll-bar-mode nil)
   (tool-bar-mode nil)
   (menu-bar-mode nil)
+  (display-battery-mode 1)
+  (display-time-mode 1)
   (visible-bell t)
   (undo-limit 800000)
   (mac-command-modifier 'meta)
@@ -20,7 +22,17 @@
   (inhibit-startup-screen t)
   (column-number-mode t)
 
+  :custom-face
+  (cursor ((t (:background "hotpink"))))
+
+  :init
+  (setq disabled-command-function nil)
+
   :preface
+  (when (and (window-system)
+             (find-font (font-spec :name "JetBrainsMono Nerd Font")))
+    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
+    (set-frame-font "JetBrainsMono Nerd Font-10" nil t))
   (setq user-emacs-directory "~/.emacs.d/"))
 
 (use-package pinentry
@@ -67,7 +79,40 @@
                                                 (nnimap-server-port 1143)
                                                 (nnimap-expunge never)
                                                 (nnimap-stream network)
-                                                (nnimap-record-commands t)))))
+                                                (nnimap-record-commands t))
+                                        (nntp "news.gmane.io"))))
+
+(use-package gnus-sum
+  :bind (:map gnus-summary-mode-map
+              ("W" . gnus-summary-wide-reply-with-original)
+              ("V" . gnus-summary-very-wide-reply-with-original))
+  :hook
+  (gnus-summary-mode . hl-line-mode)
+  :custom
+  (gnus-user-date-format-alist '(((gnus-seconds-today) . "Today      %H:%M")
+                                 ((+ 86400 (gnus-seconds-today)) . "Yesterday  %H:%M")
+                                 (t . "%d.%m.%Y %H:%M")))
+  (gnus-summary-line-format "%U %4i %&user-date; %3t: %-23,23f %s %B\n")
+  (gnus-sort-gathered-threads-function #'gnus-thread-sort-by-date)
+  (gnus-thread-sort-functions '(gnus-thread-sort-by-date))
+  (gnus-article-sort-function '(gnus-article-sort-by-date))
+  (gnus-summary-prepared-hook '(gnus-summary-hide-all-threads))
+  (gnus-thread-hide-subtree t)
+
+  :config
+  (when (window-system)
+    (setq gnus-sum-thread-tree-indent "  "
+          gnus-sum-thread-tree-root "● "
+          gnus-sum-thread-tree-false-root "◯ "
+          gnus-sum-thread-tree-single-indent "◎ "
+          gnus-sum-thread-tree-vertical        "│"
+          gnus-sum-thread-tree-leaf-with-other "├─► "
+          gnus-sum-thread-tree-single-leaf     "╰─► ")))
+
+(use-package gnus-group
+  :after gnus
+  :hook
+  (gnus-group-mode . hl-line-mode))
 
 (use-package message
   :bind ("C-x m" . compose-mail)
