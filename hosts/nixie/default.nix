@@ -30,6 +30,8 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  programs.light.enable = true;
+
   programs = {
     zsh.enable = true;
     virt-manager.enable = true;

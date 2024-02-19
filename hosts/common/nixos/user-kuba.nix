@@ -13,6 +13,7 @@ in {
         "wheel"
       ]
       ++ ifGroupExists [
+        "video"
         "libvirtd"
         "networkmanager"
       ];

@@ -13,6 +13,7 @@
           magit
           evil
           pinentry
+          paredit
         ]
         ++ [
           (callPackage ../../../../pkgs/klid {

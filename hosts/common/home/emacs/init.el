@@ -46,6 +46,15 @@
   :preface
   (setenv "GPG_AGENT_INFO" nil))
 
+(use-package auth-source-pass
+  :preface
+  (setq auth-sources
+        `(password-store
+          ,(expand-file-name ".authinfo.gpg" user-emacs-directory)))
+
+  :config
+  (auth-source-pass-enable))
+
 (use-package gnus-start
   :custom
   (gnus-asynchronous t)
@@ -63,6 +72,7 @@
   (gnus-save-killed-list nil)
   (gnus-fetch-old-headers t)
   (gnus-permanently-visible-groups "INBOX")
+  (gnus-verbose 10) ;; I prefer chatty gnus
   (gnus-posting-styles '((".*"
                           (signature
                            "Kuba Ječmínek (http://kubajecminek.cz)"))))
@@ -84,8 +94,7 @@
 
 (use-package gnus-sum
   :bind (:map gnus-summary-mode-map
-              ("W" . gnus-summary-wide-reply-with-original)
-              ("V" . gnus-summary-very-wide-reply-with-original))
+              ("F" . gnus-summary-very-wide-reply-with-original))
   :hook
   (gnus-summary-mode . hl-line-mode)
   :custom
@@ -100,6 +109,7 @@
   (gnus-thread-hide-subtree t)
 
   :config
+  (remove-hook 'gnus-summary-prepare-exit-hook 'gnus-summary-expire-articles)
   (when (window-system)
     (setq gnus-sum-thread-tree-indent "  "
           gnus-sum-thread-tree-root "● "
@@ -124,6 +134,7 @@
 (use-package smtpmail
   :custom
   (smtpmail-smtp-server "127.0.0.1")
+  (smtpmail-smtp-user user-mail-address)
   (smtpmail-smtp-service 1025)
   (smtpmail-stream-type 'starttls)
   (smtpmail-debug-info t)
