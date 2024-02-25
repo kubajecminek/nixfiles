@@ -7,6 +7,7 @@
     ../common/home/cli.nix
     ../common/home/git.nix
     ../common/home/emacs
+    ../common/home/mbsync.nix
     ../common/home/neovim.nix
     ../common/home/proton.nix
     ../common/home/fonts.nix

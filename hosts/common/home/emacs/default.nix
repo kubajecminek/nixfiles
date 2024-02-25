@@ -3,6 +3,10 @@
   lib,
   ...
 }: {
+  home.packages = [
+    (pkgs.notmuch.override {emacs = pkgs.emacs29-gtk3;})
+  ];
+
   programs.emacs = {
     enable = true;
     package = pkgs.emacs29-gtk3;

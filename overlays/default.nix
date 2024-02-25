@@ -33,4 +33,16 @@ in
     });
 
     myUnstableGPG = unstable.gnupg;
+
+    notmuch = prev.notmuch.overrideAttrs (old: {
+      withEmacs = true;
+      withRuby = false;
+      withSfsexp = false;
+
+      meta =
+        old.meta
+        // {
+          outputsToInstall = ["out" "man" "info" "emacs"];
+        };
+    });
   }
