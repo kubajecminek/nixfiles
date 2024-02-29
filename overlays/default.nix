@@ -20,7 +20,15 @@ in
             url = "https://dwm.suckless.org/patches/keycodes/dwm-keycodes-6.4.diff";
             hash = "sha256-bWLxX3NX7NRPY5kiwwKl72Wm93/Lfd/z8YTP1/xn3So=";
           })
-          ./0001-Adjust-config.def.h.patch
+          ./0001-dwm-Adjust-config.def.h.patch
+        ];
+    });
+
+    slstatus = prev.slstatus.overrideAttrs (old: {
+      patches =
+        (old.patches or [])
+        ++ [
+          ./0001-slstatus-Adjust-config.def.h.patch
         ];
     });
 
