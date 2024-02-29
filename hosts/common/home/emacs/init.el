@@ -35,16 +35,9 @@
     (set-frame-font "JetBrainsMono Nerd Font-10" nil t))
   (setq user-emacs-directory "~/.emacs.d/"))
 
-(use-package pinentry
-  :config
-  (pinentry-start))
-
 (use-package epg-config
   :custom
-  (epg-pinentry-mode 'loopback)
-
-  :preface
-  (setenv "GPG_AGENT_INFO" nil))
+  (epg-pinentry-mode 'loopback))
 
 (use-package auth-source-pass
   :preface

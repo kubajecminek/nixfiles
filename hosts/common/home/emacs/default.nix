@@ -16,7 +16,6 @@
         [
           magit
           evil
-          pinentry
           paredit
         ]
         ++ [

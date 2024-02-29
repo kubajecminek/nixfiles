@@ -4,21 +4,19 @@
   services.gpg-agent = {
     enable = true;
     enableSshSupport = true;
-    pinentryFlavor = "emacs";
+    pinentryFlavor = "gtk2";
     defaultCacheTtl = 86400;
     extraConfig = ''
-      allow-emacs-pinentry
       allow-loopback-pinentry
     '';
   };
 
   programs.gpg = {
     enable = true;
-    package = pkgs.myUnstableGPG; # I really want to prevent any collision
+    package = pkgs.myUnstableGPG;
   };
 
   home.packages = with pkgs; [
-    pinentry-emacs
     tmux
     lazygit
     python312
@@ -26,5 +24,6 @@
     ripgrep
     btop
     fzf
+    alejandra
   ];
 }
