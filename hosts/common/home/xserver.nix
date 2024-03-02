@@ -10,7 +10,7 @@
   home.packages = [pkgs.rose-pine-icon-theme];
 
   home.file.".Xresources".text = ''
-    st.font: JetBrainsMono Nerd Font-10;
+    st.font: Terminess Nerd Font Mono-11;
 
     *.foreground:   #e0def4
     *.background:   #191724
