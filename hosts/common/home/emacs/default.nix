@@ -17,6 +17,7 @@
           magit
           evil
           paredit
+          pdf-tools
         ]
         ++ [
           (callPackage ../../../../pkgs/klid {

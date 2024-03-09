@@ -29,8 +29,6 @@ in {
       restic
       trezor_agent
       pass
-      lf
-      sxiv
       pulsemixer
     ];
   };
