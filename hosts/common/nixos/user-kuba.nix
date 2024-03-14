@@ -5,6 +5,7 @@
 }: let
   ifGroupExists = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
 in {
+  users.mutableUsers = false;
   users.users.kuba = {
     isNormalUser = true;
     shell = pkgs.zsh;
@@ -19,7 +20,7 @@ in {
       ];
 
     # I'm not afraid
-    hashedPassword = "$6$TbOFsZMEvlYHGnbk$lc4XQYaMteVKTM.ws3aKLLuztIi1KuwqDsAJp1sIWsQM.MxqC5e4c9IAdxMcRRCyBv49NuO4uHNKzN3gEAiq7.";
+    hashedPassword = "$y$j9T$Fhm3vpGW74WfdG5W5tr2G/$t7TyYOUyEyJaH6824p/svIaIA5c2pAe8df0ZUthvfL5";
 
     home = "/home/kuba";
 

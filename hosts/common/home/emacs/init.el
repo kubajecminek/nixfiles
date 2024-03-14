@@ -66,6 +66,7 @@
   (gnus-fetch-old-headers t)
   (gnus-permanently-visible-groups "INBOX")
   (gnus-verbose 10) ;; I prefer chatty gnus
+  (gnus-search-use-parsed-queries t)
   (gnus-posting-styles '((".*"
                           (signature
                            "Kuba Ječmínek (http://kubajecminek.cz)"))))
