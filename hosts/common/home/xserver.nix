@@ -10,42 +10,32 @@
   home.packages = [pkgs.rose-pine-icon-theme];
 
   home.file.".Xresources".text = ''
-    st.font: Terminess Nerd Font Mono-11;
+    st.font: JetBrainsMono Nerd Font Mono-9;
 
-    *.foreground:   #e0def4
-    *.background:   #191724
-    *.cursorColor:  #e0def4
+    ! window padding
+    st.borderpx: 20
 
-    ! black
-    *.color0:       #1f1d2e
-    *.color8:       #26233a
+    !- 0.1 to 0.9 = transparency
+    st.alpha: 0.9
 
-    ! red
-    *.color1:       #eb6f92
-    *.color9:       #eb6f92
-
-    ! green
-    *.color2:       #f6c177
-    *.color10:      #f6c177
-
-    ! yellow
-    *.color3:       #ebbcba
-    *.color11:      #ebbcba
-
-    ! blue
-    *.color4:       #31748f
-    *.color12:      #31748f
-
-    ! magenta
-    *.color5:       #c4a7e7
-    *.color13:      #c4a7e7
-
-    ! cyan
-    *.color6:       #9ccfd8
-    *.color14:      #9ccfd8
-
-    ! white
-    *.color7:       #6e6a86
-    *.color15:      #908caa
+    *.color0: #1d2021
+    *.color1: #cc241d
+    *.color2: #98971a
+    *.color3: #d79921
+    *.color4: #458588
+    *.color5: #b16286
+    *.color6: #689d6a
+    *.color7: #a89984
+    *.color8: #928374
+    *.color9: #fb4934
+    *.color10: #b8bb26
+    *.color11: #fabd2f
+    *.color12: #83a598
+    *.color13: #d3869b
+    *.color14: #8ec07c
+    *.color15: #ebdbb2
+    *.background: #282828
+    *.foreground: white
+    *.cursorColor: white
   '';
 }

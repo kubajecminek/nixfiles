@@ -17,6 +17,7 @@ in {
       start = ''
         export _JAVA_AWT_WM_NONREPARENTING=1
         slstatus &
+        picom &
         dwm &
         waitPID=$!
       '';
@@ -29,5 +30,6 @@ in {
     st
     slstatus
     slock
+    picom
   ];
 }

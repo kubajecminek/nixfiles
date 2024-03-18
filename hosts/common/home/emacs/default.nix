@@ -18,6 +18,7 @@
           evil
           paredit
           pdf-tools
+          doom-themes
         ]
         ++ [
           (callPackage ../../../../pkgs/klid {

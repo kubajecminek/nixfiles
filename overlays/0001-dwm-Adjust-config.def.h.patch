@@ -22,13 +22,13 @@ index bba31ed..510e547 100644
 -static const char col_gray3[]       = "#bbbbbb";
 -static const char col_gray4[]       = "#eeeeee";
 -static const char col_cyan[]        = "#005577";
-+static const char *fonts[]          = { "Terminess Nerd Font Mono:size=11" };
-+static const char dmenufont[]       = "Terminess Nerd Font Mono:size=11";
-+static const char col_gray1[]       = "#191724";
-+static const char col_gray2[]       = "#4c566a";
-+static const char col_gray3[]       = "#908caa";
-+static const char col_gray4[]       = "#e0def4";
-+static const char col_cyan[]        = "#eb6f92";
++static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:size=9" };
++static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:size=9";
++static const char col_gray1[]       = "#282828";
++static const char col_gray2[]       = "#928374";
++static const char col_gray3[]       = "#a89984";
++static const char col_gray4[]       = "#282828";
++static const char col_cyan[]        = "#a89984";
  static const char *colors[][3]      = {
  	/*               fg         bg         border   */
  	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
