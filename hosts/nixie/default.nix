@@ -32,6 +32,9 @@
 
   programs.light.enable = true;
 
+  services.tlp.enable = true;
+  powerManagement.enable = true;
+
   programs = {
     zsh.enable = true;
     virt-manager.enable = true;
