@@ -1,0 +1,14 @@
+[user]
+	name = Jakub Ječmínek
+	email = kuba@kubajecminek.cz
+[init]
+	defaultBranch = master
+[core]
+	editor = "emacs -nw"
+[sendemail]
+	smtpencryption = starttls
+	smtpserver = 127.0.0.1
+	smtpuser = kuba@kubajecminek.cz
+	smtpserverport = 1025
+[color]
+	ui = auto
