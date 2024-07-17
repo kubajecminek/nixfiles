@@ -28,3 +28,6 @@
 
 (use-package notmuch
   :load-path "/usr/share/emacs/site-lisp/elpa-src/notmuch-0.35/")
+
+(use-package klid-mode
+  :load-path "~/.emacs.d/elpa/klid/")
