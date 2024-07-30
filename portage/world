@@ -4,11 +4,13 @@ app-backup/restic
 app-crypt/seahorse
 app-editors/nano
 app-emulation/virt-manager
-app-misc/fastfetch
+app-misc/neofetch
+app-misc/tmux
 app-office/libreoffice-bin
 app-portage/gentoolkit
 dev-vcs/git
 gnome-base/gnome-light
+gnome-extra/gnome-tweaks
 gnome-extra/nm-applet
 mail-mta/proton-mail-bridge
 media-fonts/jetbrains-mono
@@ -25,4 +27,5 @@ sys-boot/grub
 sys-fs/btrfs-progs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
+sys-process/btop
 www-client/firefox-bin
