@@ -1,0 +1,8 @@
+x11-libs/libdrm  video_cards_radeon
+sys-kernel/installkernel dracut grub
+net-misc/networkmanager dhcpcd systemd wifi
+net-mail/notmuch emacs -mutt crypt
+net-misc/spice-gtk usbredir
+net-dns/dnsmasq script
+net-libs/gnutls tools pkcs11
+mail-mta/proton-mail-bridge -gui

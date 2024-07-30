@@ -32,9 +32,9 @@
 
   :preface
   (when (and (window-system)
-             (find-font (font-spec :name "JetBrainsMono Nerd Font")))
-    (set-face-attribute 'default nil :font "JetBrainsMono Nerd Font-10")
-    (set-frame-font "JetBrainsMono Nerd Font-10" nil t))
+             (find-font (font-spec :name "JetBrainsMono")))
+    (set-face-attribute 'default nil :font "JetBrainsMono-10")
+    (set-frame-font "JetBrainsMono-10" nil t))
   (setq user-emacs-directory "~/.emacs.d/"))
 
 (use-package epg-config
