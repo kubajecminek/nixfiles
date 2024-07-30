@@ -6,3 +6,5 @@ net-misc/spice-gtk usbredir
 net-dns/dnsmasq script
 net-libs/gnutls tools pkcs11
 mail-mta/proton-mail-bridge -gui
+media-libs/libheif x265
+app-editors/emacs sqlite json tree-sitter imagemagick mailutils
