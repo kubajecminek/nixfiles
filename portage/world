@@ -23,9 +23,11 @@ net-mail/isync
 net-mail/notmuch
 net-misc/chrony
 net-misc/networkmanager
+net-p2p/qbittorrent
 sys-boot/grub
 sys-fs/btrfs-progs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
+sys-power/tlp
 sys-process/btop
 www-client/firefox-bin
