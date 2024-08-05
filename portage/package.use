@@ -8,3 +8,5 @@ net-libs/gnutls tools pkcs11
 mail-mta/proton-mail-bridge -gui
 media-libs/libheif x265
 app-editors/emacs sqlite json tree-sitter imagemagick mailutils
+media-video/ffmpeg opus vpx
+dev-util/android-tools udev

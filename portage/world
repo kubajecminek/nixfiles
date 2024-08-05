@@ -6,8 +6,10 @@ app-editors/nano
 app-emulation/virt-manager
 app-misc/neofetch
 app-misc/tmux
+app-mobilephone/heimdall
 app-office/libreoffice-bin
 app-portage/gentoolkit
+dev-util/android-tools
 dev-vcs/git
 gnome-base/gnome-light
 gnome-extra/gnome-tweaks
@@ -26,6 +28,7 @@ net-misc/networkmanager
 net-p2p/qbittorrent
 sys-boot/grub
 sys-fs/btrfs-progs
+sys-fs/mtpfs
 sys-kernel/gentoo-kernel-bin
 sys-kernel/linux-firmware
 sys-power/tlp
